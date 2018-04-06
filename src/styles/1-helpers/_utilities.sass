@@ -1,0 +1,58 @@
+%u-ct
+  text-align: center
+
+%u-mb-t
+  margin-bottom: $spacing-tiny
+
+%u-mb-s, .u-mb-s
+  margin-bottom: $spacing-small
+
+%u-mb-m
+  margin-bottom: $spacing-medium
+
+%u-mb-l, .u-mb-l
+  margin-bottom: $spacing-large
+
+%u-mb-xl
+  margin-bottom: $spacing-extra-large
+
+%u-mt-t
+  margin-top: $spacing-tiny
+
+%u-mt-s
+  margin-top: $spacing-small
+
+%u-mt-m
+  margin-top: $spacing-medium
+
+%u-mt-l
+   margin-top: $spacing-large
+
+%u-mt-xl
+  margin-top: $spacing-extra-large
+
+%u-p-section
+  padding-top: $spacing-section
+  padding-bottom: $spacing-section
+
+//colors
+%u-fade-gradient-header
+  mask-image: linear-gradient(0deg, transparent 44%, black 100%)
+
+%u-bg-transparent-5
+  background: rgba(231, 231, 231, .05)
+
+%u-bg-transparent-10
+  background: rgba(231, 231, 231, .10)
+
+%u-color-primary, .u-color-primary
+  color: $color-primary
+
+//photos
+%u-photo-bg-section
+  background:
+    size: contain
+    repeat: repeat-x
+  +respond-to('xxl')
+    background:
+      size: cover

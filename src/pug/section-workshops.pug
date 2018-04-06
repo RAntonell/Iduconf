@@ -1,0 +1,45 @@
+mixin workshop(src_workshop, alt_workshop , name_workshop, src_speaker, alt_speaker, name_speaker, position_speaker)
+  .workshop
+    img(src='img/' + src_workshop + '', alt='' + alt_workshop + '').img-gradient-effect.workshop__img
+    .workshop__info
+      h3.h3= name_workshop
+      p.p Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit.
+      .workshop__speaker
+        img(src='img/' + src_speaker + '', alt='' + alt_speaker + '').img-gradient-effect.workshop__speaker-img
+        .workshop__speaker-text
+          p.p--bolder= name_speaker
+          p.p= position_speaker
+
+mixin section-workshops
+  section.section-workshops
+    .row
+      h4.h4 talleres
+      h2.h2 aprende como trabajan los mejores en el sector
+    .row
+      +workshop(
+        'workshop-sketch.jpg',
+        'Personas con sus ordenadores delante de una ventana',
+        'creación de prototipos con sketch app',
+        'speaker-charles-fisher.jpg',
+        'El diseñador de productos, Charles Fisher',
+        'Charles Fisher',
+        'Diseñador de productos en Zalando'
+      )
+      +workshop(
+        'workshop-initial-state.jpg',
+        'Hombre sentado en el sofa, con un ordenador',
+        'Ideación e investigación, la fase inicial',
+        'speaker-brenda-foster.jpg',
+        'La diseñadora, brenda foster',
+        'Charles Fisher',
+        'Diseñador en Google'
+      )
+      +workshop(
+        'workshop-paper.jpg',
+        'Multitud eschando una conferencia',
+        'Wireframe con la mejor herrameinta, papel',
+        'speaker-ann-beck.jpg',
+        'La diseñadora, Ann beck',
+        'Ann Beck',
+        'Directora de diseño en Asos'
+      )

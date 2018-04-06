@@ -1,0 +1,17 @@
+mixin data-box(number, type)
+  .info__data-box
+    .h1= number
+    h4.h4= type
+
+mixin section-about
+  section.section-about
+    .row
+      .section-about__text
+        h4.h4 acerca de iduconf
+        h2.h2.h2--mb-t ui en el centro de barcelona
+        p.p Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien.           
+      .info
+        +data-box('2', 'dias')
+        +data-box('1', 'evento')
+        +data-box('6', 'oradores')
+        +data-box('3', 'talleres')

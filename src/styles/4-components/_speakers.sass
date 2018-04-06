@@ -1,0 +1,34 @@
+.speakers
+  padding: 0
+  max-width: calc(48rem - 3.2rem)
+  +respond-to(grid)
+    max-width: calc(115.2rem - 3.2rem)
+
+  &:hover .speaker:not(:hover)
+    filter: blur(.4rem)
+    opacity: .4
+
+  .col-1-of-3-no-gutter
+    +respond-to('m')
+      display: flex
+      align-items: center
+      justify-content: space-around
+
+
+  //not good practice to have a two level, selector...
+  .col-1-of-3-no-gutter:nth-child(3n+1)
+    position: relative
+    top: .8rem
+
+  .col-1-of-3-no-gutter:nth-child(2), .col-1-of-3-no-gutter:nth-child(5)
+    position: relative
+    top: 1.6rem
+
+.speaker
+  position: relative
+  transition: all $transition-duration-base $transition-timing-base
+
+  +element('text')
+    position: absolute
+    bottom: 1.6rem
+    left: 1.6rem

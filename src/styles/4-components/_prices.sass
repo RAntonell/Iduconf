@@ -1,0 +1,55 @@
+.prices-panels-box
+  display: flex
+  justify-content: center
+  align-items: center
+  +respond-to('m')
+    flex-direction: column
+
+.price-panel
+  flex-grow: 1
+  @extend %u-bg-transparent-5
+  padding-top: 1.6rem
+  max-width: 28rem
+  +respond-to('m')
+    width: 100%
+    max-width: 40rem
+
+  &:not(:last-child)
+    +respond-to('m')
+      margin-bottom: 2.4rem
+
+  +element('price')
+    display: flex
+    align-items: flex-end
+    text-transform: uppercase
+    justify-content: center
+    margin: .8rem 0
+
+    //not good practice to have a two level, selector...
+    .p
+      margin-bottom: .8rem
+      margin-left: .8rem
+
+  +element('btn-box')
+    @extend %u-bg-transparent-10
+    padding: 1.6rem 0 2rem
+
+  +element('feature')
+    padding: 1.6rem
+
+    &:first-of-type
+      margin-top: 2.4rem
+
+    &:nth-child(2n+1)
+      @extend %u-bg-transparent-10
+
+  &:nth-child(2)
+    padding-top: 4rem
+    max-width: 31.2rem
+    margin: 0 .8rem
+    +respond-to('m')
+      max-width: 40rem
+
+    //not good practice to have a two level, selector...
+    .price-panel__btn-box
+      padding: 2.8rem 0 3.1rem

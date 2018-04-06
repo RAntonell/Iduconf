@@ -1,0 +1,101 @@
+.schedule
+  display: flex
+
+  +element('tabs')
+    display: flex
+    flex-direction: column
+    width: 25.8rem
+    +respond-to('m')
+      display: none
+
+  +element('tab')
+    padding: 1.6rem
+    @extend %u-bg-transparent-5
+    margin-right: .4rem
+    position: relative
+
+    &:not(:last-child)
+      margin-bottom: .4rem
+
+  +element('tab-accordion')
+    &:link
+      @extend .schedule__tab
+      display: none
+      +respond-to('m')
+        display: block
+        width: 100%
+
+  +element('content-container')
+    flex-grow: 1
+
+  +element('tab-content')
+    @extend %u-bg-transparent-5
+    +respond-to('m')
+      margin-bottom: .4rem
+
+  //not good practice to have a two level, selector...
+  .schedule__tab:hover, .is-active
+    background-color: $color-primary
+
+    .p--bolder
+      color: $color-light
+
+    .p
+      color: $color-secondary
+
+  +element('tab-content')
+    padding: 3.2rem
+
+  +element('event')
+    display: flex
+    position: relative
+    align-items: flex-start
+    +respond-to('s')
+      flex-direction: column
+      align-items: center
+      text-align: center
+
+    &:not(:last-child)
+      margin-bottom: 3.2rem
+      +respond-to('s')
+        margin-bottom: 4rem
+
+      &:after
+        +respond-to('s')
+          content: ''
+          left: 50%
+          transform: translateX(-50%)
+          position: absolute
+          bottom: -3.2rem
+          width: .4rem
+          height: 3.2rem
+          background-color: $color-light
+          opacity: .2
+
+
+
+      .schedule__img-box:after
+        content: ''
+        left: 50%
+        transform: translateX(-50%)
+        position: absolute
+        bottom: -2.4rem
+        width: .4rem
+        height: 3.2rem
+        background-color: $color-light
+        opacity: .2
+        +respond-to('s')
+          display: none
+
+  +element('event-info')
+    margin-left: 1.6rem
+    +respond-to('s')
+      margin-left: 0
+
+  +element('img-box')
+    height: 12rem
+    min-width: 12rem
+    position: relative
+
+  +element('img')
+    height: 100%

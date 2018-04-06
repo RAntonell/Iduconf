@@ -1,0 +1,22 @@
+.info
+  height: 100%
+  text-align: center
+  display: flex
+  justify-content: space-between
+  +respond-to('l')
+    margin-top: 2.4rem
+  +respond-to('m')
+    flex-direction: column
+
+  +element('data-box')
+    display: inline-block
+    padding: 3.2rem 1.6rem
+    flex-grow: 1
+    &:not(:last-child)
+      border-right: 2px solid rgba(230, 230, 230, .2)
+      +respond-to('m')
+        border-bottom: 2px solid rgba(230, 230, 230, .2)
+        border-right: none
+
+  .h4, .h1
+    margin-bottom: 0

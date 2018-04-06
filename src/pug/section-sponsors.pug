@@ -1,0 +1,14 @@
+mixin sponsor(src, alt)
+  .sponsor-container
+    img(src='img/'+ src +'', alt='' + alt + '').sponsor
+    
+mixin section-sponsors
+  section.section-sponsors
+    .row
+      h4.h4 patrocinadores
+    .row
+      .sponsors-container
+        +sponsor('sponsor-logo-1.svg', 'the best logo ever')
+        +sponsor('sponsor-logo-2.svg', 'the best logo ever')
+        +sponsor('sponsor-logo-3.svg', 'the best logo ever')
+        +sponsor('sponsor-logo-4.svg', 'the best logo ever')

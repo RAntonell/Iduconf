@@ -1,0 +1,46 @@
+mixin price-panel(heading, price, price_at_event, feature_1, feature_2)
+  .price-panel
+    p.p--bolder= heading
+    .price-panel__price
+      .h1= price
+      .p euros
+    .label El precio en taquilla es de <span class="u-color-primary">#{price_at_event}</span> euros
+    .price-panel__features
+      .price-panel__feature.p Acceso a todas las conferencias
+      .price-panel__feature.p= feature_1
+      .price-panel__feature.p Desayuno incluido
+      .price-panel__feature.p= feature_2
+    .price-panel__btn-box
+      a(href='javascript:void(0)').btn comprar ticket
+
+
+mixin section-prices
+  section.section-prices
+    .row
+      h4.h4 precios
+      h2.h2 compra tu ticket con antelación      
+    .row
+      .prices-panels-box
+        +price-panel(
+          'ticket para 1 día',
+          '99',
+          '119',
+          'Acceso a 1 taller',
+          'Elige el día de acceso'
+        )
+        
+        +price-panel(
+          'ticket para 3 dias',
+          '279',
+          '299',
+          'Acceso a todos los talleres',
+          'Acceso rápido a las conferencias'
+        )
+        
+        +price-panel(
+          'ticket para 2 día',
+          '189',
+          '209',
+          'Acceso a 2 talleres',
+          'Elige ls dias de acceso'
+        )

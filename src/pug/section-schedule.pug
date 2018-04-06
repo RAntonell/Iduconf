@@ -1,0 +1,126 @@
+mixin schedule-event(src, alt, name, hour_start, hour_end, by, by_la)
+  .schedule__event
+    .schedule__img-box
+      img(src='img/'+ src + '', alt='' + alt + '').schedule__img.img-gradient-effect
+    .schedule__event-info
+      p.p de #{hour_start} a #{hour_end}
+      p.p--bolder= name
+      if by_la
+        p.p por la <span class="u-color-primary">#{by}</span>
+      else
+        p.p por <span class="u-color-primary">#{by}</span>
+      
+
+mixin section-schedule
+  section.section-schedule
+    .row
+      h4.h4 horario de los eventos
+      h2.h2 queremos que estés presente
+    .row
+      .schedule
+        .schedule__tabs
+          a(href="javascript:void(0)" rel="tab-1").schedule__tab.js-tab.is-active
+            p.p--bolder día 1
+            p.p 40 de enero, 2018
+          a(href="javascript:void(0)" rel="tab-2").schedule__tab.js-tab
+            p.p--bolder día 2
+            p.p 41 de enero, 2018
+          a(href="javascript:void(0)" rel="tab-3").schedule__tab.js-tab 
+            p.p--bolder día 3
+            p.p 42 de enero, 2018
+          
+        .schedule__content-container
+          a(href="javascript:void(0)" rel="tab-1").schedule__tab-accordion.js-tab-accordion.is-active
+            p.p--bolder día 1
+            p.p 40 de enero, 2018
+          #tab-1.schedule__tab-content.js-tab-content
+            +schedule-event(
+              'schedule-team.jpg', 
+              'El equipo en la hora del almuerzo', 
+              'iduconf envento de inaguración',
+              '9:00',
+              '10:00',
+              'organización del evento',
+              'true'
+            )
+            
+            +schedule-event(
+              'speaker-jacqueline-robertson.jpg', 
+              'la diseñadora, Jacqueline Robertson', 
+              'Conferecia: destaca en dribbble',
+              '10:30',
+              '12:00',
+              'Jacqueline Robertson'
+            )
+            
+            +schedule-event(
+              'speaker-ann-beck.jpg', 
+              'la directora de diseñado, Ann Beck', 
+              'Taller: wireframe con la mejor herramienta, papel',
+              '12:30',
+              '14:00',
+              'Ann beck'
+            )
+            
+            +schedule-event(
+              'speaker-brenda-foster.jpg', 
+              'La diseñadora Brenda Foster', 
+              'conferencia: sketch 49',
+              '16:00',
+              '17:30',
+              'Brenda Foster'
+            )
+          
+          a(href="javascript:void(0)" rel="tab-2").schedule__tab-accordion.js-tab-accordion
+            p.p--bolder día 2
+            p.p 41 de enero, 2018  
+          #tab-2.schedule__tab-content.js-tab-content
+            +schedule-event(
+              'speaker-jacqueline-robertson.jpg', 
+              'la diseñadora, Jacqueline Robertson', 
+              'Conferecia: destaca en dribbble',
+              '10:30',
+              '12:00',
+              'Jacqueline Robertson'
+            )
+            
+            +schedule-event(
+              'speaker-ann-beck.jpg', 
+              'la directora de diseñado, Ann Beck', 
+              'Taller: wireframe con la mejor herramienta, papel',
+              '12:30',
+              '14:00',
+              'Ann beck'
+            )
+          
+          a(href="javascript:void(0)" rel="tab-3").schedule__tab-accordion.js-tab-accordion
+            p.p--bolder día 3
+            p.p 42 de enero, 2018  
+          #tab-3.schedule__tab-content.js-tab-content
+            +schedule-event(
+              'speaker-jacqueline-robertson.jpg', 
+              'la diseñadora, Jacqueline Robertson', 
+              'Conferecia: destaca en dribbble',
+              '10:30',
+              '12:00',
+              'Jacqueline Robertson'
+            )
+            
+            +schedule-event(
+              'speaker-ann-beck.jpg', 
+              'la directora de diseñado, Ann Beck', 
+              'Taller: wireframe con la mejor herramienta, papel',
+              '12:30',
+              '14:00',
+              'Ann beck'
+            )
+            
+            +schedule-event(
+              'speaker-brenda-foster.jpg', 
+              'La diseñadora Brenda Foster', 
+              'conferencia: sketch 49',
+              '16:00',
+              '17:30',
+              'Brenda Foster'
+            )
+  

@@ -1,0 +1,56 @@
+mixin speaker(name, position, src, alt)
+  .speaker
+    img(src='img/' + src + '', alt='' + alt + '').img-gradient-effect.speaker-img
+    .speaker__text
+      p.p--bolder= name
+      p.p= position
+
+mixin section-speakers
+  section.section-speakers
+    .row
+      h4.h4 ponentes
+      h2.h2 las figuras más imporatantes en el entorno UI
+    .row
+      .speakers
+        .col-1-of-3-no-gutter
+          +speaker(
+            'Jacqueline robertson', 
+            'Diseñadora en Airbnb', 
+            'speaker-jacqueline-robertson.jpg', 
+            'La diseñadora, Jacqueline robertson'
+          )
+        .col-1-of-3-no-gutter
+          +speaker(
+            'Charles Fisher', 
+            'Diseñador de producto en Zalando', 
+            'speaker-charles-fisher.jpg', 
+            'El diseñador de producto, Charles Fisher'
+          )
+        .col-1-of-3-no-gutter
+          +speaker(
+            'Daniel Long', 
+            'Director de diseño en Yahoo', 
+            'speaker-daniel-long.jpg', 
+            'El director de diseño, Daniel Long'
+          )
+        .col-1-of-3-no-gutter
+          +speaker(
+            'Ann Beck', 
+            'Directora de diseño en Asos', 
+            'speaker-ann-beck.jpg', 
+            'La directora de diseño, Ann Beck'
+          )
+        .col-1-of-3-no-gutter
+          +speaker(
+            'Brenda Foster', 
+            'Diseñadora en Google', 
+            'speaker-brenda-foster.jpg', 
+            'La diseñadora de Google, Brenda Foster'
+          )
+        .col-1-of-3-no-gutter
+          +speaker(
+            'Harry Mason', 
+            'Diseñador de producto en Afflelou', 
+            'speaker-harry-mason.jpg', 
+            'El diseñador de producto, Harry Mason'
+          )
