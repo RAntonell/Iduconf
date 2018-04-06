@@ -1,1 +1,82 @@
 .footer
+  background-image: url('../img/bg-footer.png')
+  @extend %u-photo-bg-section
+  +respond-to('m')
+    text-align: center
+
+
+  +element('upper-box')
+    display: flex
+    align-items: center
+    padding: 3.2rem 0
+    border-bottom: .2rem rgba(230, 230, 230, .2) solid
+    +respond-to('m')
+      flex-direction: column
+
+  +element('logo-box')
+    margin-right: auto
+    +respond-to('m')
+      margin: 0
+      margin: 0 0 2.4rem
+
+  +element('link')
+    &:link
+      @extend .p
+
+      &:hover
+        @extend %u-color-primary
+
+  +element('social-box')
+    margin-left: 5.4rem
+    +respond-to('m')
+      margin: 2.4rem 0 0
+
+  +element('social-link')
+    &:hover
+      color: $color-primary
+
+    &:not(:last-child)
+      margin-right: 2.4rem
+
+
+
+  +element('social-icon')
+    font-size: 2.4rem
+    dis
+
+  +element('lower-box')
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 1.6rem
+    +respond-to('m')
+      flex-direction: column
+
+  +element('copy')
+    @extend .label
+    +respond-to('m')
+      order: 1
+      margin-top: .8rem
+
+  +element('legal')
+    flex-grow: 2
+    text-align: right
+    +respond-to('m')
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      justify-content: center
+
+    //not good practice to have a two level selector...
+    a:link
+      @extend .label
+      +respond-to('m')
+        margin: 0 .8rem
+
+      &:not(:last-child)
+        margin-right: 2.4rem
+        +respond-to('m')
+          margin-right: 0
+
+      &:hover
+        @extend %u-color-primary

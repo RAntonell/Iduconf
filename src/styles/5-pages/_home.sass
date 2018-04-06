@@ -1,1 +1,56 @@
+body
+  background-image: linear-gradient(0deg, $color-secondary 0%, $color-tertiary 22%, $color-tertiary 74%, $color-secondary 100%)
 
+.section-speakers, .section-about, .section-workshops, .section-schedule, .section-prices, .section-sponsors
+  @extend %u-p-section
+
+.section-about
+  background-image: url('../img/bg-about.png')
+  @extend %u-photo-bg-section
+
+  +element('text')
+    margin-right: 2.4rem
+    +respond-to('m')
+      margin-right: 0
+      text-align: center
+
+  //not good practice to have a two level selector...
+  .row
+    display: flex
+    align-items: center
+    +respond-to('l')
+      flex-direction: column
+      align-items: flex-start
+    +respond-to('m')
+      align-items: center
+
+.section-workshops
+  background-image: url('../img/bg-workshops.png')
+  @extend %u-photo-bg-section
+
+.section-prices
+  background-image: url('../img/bg-prices.png')
+  @extend %u-photo-bg-section
+
+.img-gradient-effect
+  mask-image: linear-gradient(0deg, transparent 8%, black 50%)
+
+.section-prices
+  text-align: center
+
+.section-sponsors
+  text-align: center
+
+.sponsors-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-top: 4.8rem
+  flex-wrap: wrap
+  +respond-to('xl')
+    justify-content: space-around
+
+.sponsor
+  margin: 2.4rem
+  +respond-to('s')
+    margin: 2.4rem 1.2rem

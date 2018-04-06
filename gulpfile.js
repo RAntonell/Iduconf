@@ -15,6 +15,8 @@ const gulp             = require('gulp'),
       gutil            = require('gulp-util'),
       merge            = require('merge2'),
       buffer           = require('gulp-buffer'),
+      mmq              = require('gulp-merge-media-queries'),
+      cleanCSS         = require('gulp-clean-css'),
       // development mode?
       isProd           = gutil.env.type === 'prod',
       // folders
@@ -73,17 +75,16 @@ gulp.task('pug', function() {
 gulp.task('sass', function() {
   gulp.src(folder.src + 'styles/*.sass')
   .pipe(sourcemaps.init())
-  .pipe(!isProd ? sass({
-    outputStyle: 'expanded',
+  .pipe(sass({
     includePaths: [bourbon, neat]
-  }) : gutil.noop())
-  .pipe(isProd ? sass({
-    outputStyle: 'compressed',
-    includePaths: [bourbon, neat]
-  }) : gutil.noop())
+  }))
   .pipe(autoprefixer({
     versions: ['last 2 browsers']
   }))
+  .pipe(mmq({
+      log: false
+  }))
+  .pipe(isProd ? cleanCSS() : gutil.noop())
   .pipe(!isProd ? sourcemaps.write('./') : gutil.noop())
   .pipe(gulp.dest(folder.dist  + 'styles/'));
 });

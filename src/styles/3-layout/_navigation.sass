@@ -1,1 +1,77 @@
-.navigation
+.header
+
+  +element('nav')
+    +respond-to('l')
+      background-color: $color-secondary
+      position: absolute
+      width: 100%
+      left: 0
+      top: 0
+      z-index: 20
+      padding-top: 2.4rem
+
+
+  +element('list')
+
+  +element('link')
+    @extend .btn-text
+
+  +element('item')
+    display: inline-block
+    +respond-to('l')
+      display: block
+      padding: 3.2rem
+      text-align: center
+
+    &:not(:last-child)
+      margin-right: 3.2rem
+      +respond-to('l')
+        margin-right: 0
+        margin-bottom:
+
+  +element('icon')
+    display: none
+    position: absolute
+    right: 3.2rem
+    top: 3.2rem
+    width: 4rem
+    height: 4rem
+    z-index: 30
+    +respond-to('l')
+      display: block
+
+    //not good practice to have a two level selector...
+    &.is-active .header__hamburger
+      background-color: rgba(0, 0, 0, 0)
+
+      &:after
+        top: 0
+        transform: rotate(135deg)
+
+      &:before
+        top: 0
+        transform: rotate(45deg)
+
+  +element('hamburger')
+    width: 100%
+    height: .4rem
+    position: absolute
+    +center(false, true)
+    background-color: $color-light
+    transition: all $transition-duration-base $transition-timing-base
+
+    &:after, &::before
+      content: ''
+      display: block
+      height: .4rem
+      width: 100%
+      background-color: $color-light
+      position: absolute
+      transition: all $transition-duration-base $transition-timing-base
+
+    &:after
+      top: 1.8rem
+
+
+    &:before
+      top: -1.8rem

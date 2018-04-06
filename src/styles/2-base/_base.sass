@@ -8,6 +8,8 @@
 html
   // This defines what 1rem is: 1 rem = 10px(10px/16px = 62.5%)
   font-size: 62.5%
+  +respond-to('s')
+    font-size: 55%
 
 body
   box-sizing: border-box
@@ -15,3 +17,8 @@ body
 ::selection
     background-color: $color-primary
     color: $color-white
+
+//media
+img
+  max-width: 100%
+  height: auto

@@ -1,3 +1,25 @@
 mixin footer
-  footer
-      p © 2017 
+  footer.footer
+    .row
+      .footer__upper-box
+        .footer__logo-box
+          img(alt='logo iduconf' src='img/logo-with-text.svg').footer__logo
+          
+        .footer__contact
+          .p--bolder Contáctenos
+          a(href="mailto:roger.antonell@gmail.com").footer__link roger.antonell@gmail.com
+          
+        .footer__social-box
+          .p--bolder Síguenos
+          a(href="javascript:void(0)").footer__social-link: i(class="fa fa-facebook" aria-hidden="true").footer__social-icon
+          a(href="javascript:void(0)").footer__social-link: i(class="fa fa-twitter" aria-hidden="true").footer__social-icon
+          a(href="javascript:void(0)").footer__social-link: i(class="fa fa-instagram" aria-hidden="true").footer__social-icon
+    
+    .footer__lower-box.row
+      .footer__copy Copyright © 2018 Iduconf, Todos los derechos reservados.
+      .footer__legal
+        a(href="javascript:void(0)") Política de privacidad
+        a(href="javascript:void(0)") Avisos legales
+      
+      
+      

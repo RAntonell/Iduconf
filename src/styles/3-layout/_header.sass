@@ -1,1 +1,36 @@
 .header
+  +element('bg-img')
+    opacity: 0.5
+    width: 100%
+    position: absolute
+    z-index: -10
+    background:
+      image: url('../img/barcelona-city.jpg')
+      size: cover
+      position: 0 20%
+      repeat: no-repeat
+    height: 50rem
+
+    @extend %u-fade-gradient-header
+    +respond-to('xxl')
+      background-position: center
+
+  +element('upper-box')
+    display: flex
+    padding: 2.4rem 4.8rem
+    justify-content: space-between
+    align-items: center
+
+  +element('logo')
+    height: 4.8rem
+
+  +element('text-box')
+    @extend %u-p-section
+    +respond-to('s')
+      text-align: center
+
+
+  .h4
+    text-align: left
+    +respond-to('s')
+      text-align: center

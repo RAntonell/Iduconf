@@ -1,6 +1,26 @@
 mixin header
-  header
-    h1.h1 about
-    h2.h2 about
-    h3.h3 about
-    h4.h4 about
+  header.header
+    .header__bg-img
+    
+    .header__upper-box
+      .header__logo-box
+        img(src="img/logo.svg", alt="nice logo, without text").header__logo
+        
+      .header__icon.js-icon
+        .header__hamburger
+        
+      nav.header__nav
+        ul.header__list
+          li.header__item: a(href="#").header__link sobre nosotros
+          li.header__item: a(href="#").header__link oradores
+          li.header__item: a(href="#").header__link talleres
+          li.header__item: a(href="#").header__link horarios
+          li.header__item: a(href="#").header__link contacto
+        
+    .header__text-box
+      .row
+        h4.h4 iduconf 2018
+        h1.h1 conferencia acerca de la interfaz de usuario
+        h4.h4.u-mb-l del 40 al 42 de enero | <span class="h4--primary-color">Barcelona</span>
+        a(href="#").btn comprar entradas
+    
